@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +10,9 @@ import { from } from 'rxjs';
 export class NavbarComponent implements OnInit {
 
   title = 'WORKTRACKER';
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  ngOnInit() {
+    
   }
 }
 

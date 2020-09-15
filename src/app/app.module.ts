@@ -18,11 +18,11 @@ import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-an
 
 import { HttpModule } from '@angular/http';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
+import {HttpClientModule} from '@angular/common/http'
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -67,7 +67,8 @@ import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-
     MultiSelectAllModule, 
     TreeViewModule, 
     ButtonAllModule, 
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,7 +23,7 @@ export class CalenderComponent implements OnInit {
 
 
     public data: Object[] = <Object[]>extend([], zooEventsData, null, true);
-    public selectedDate: Date = new Date(2018, 1, 15);
+    public selectedDate: Date = new Date(2020, 1, 15);
     public eventSettings: EventSettingsModel = { dataSource: this.data };
     public currentView: View = 'Week';
 
