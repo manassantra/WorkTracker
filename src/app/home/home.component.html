@@ -1,168 +1,57 @@
-<div class="container-fluid row" >
-    <div class="col-12">
-      <div class="card">
-        <div class="card-header">
-          <h2 class="card-title">Job Process</h2>
 
-          <div class="card-tools">
-            <div class="input-group input-group-sm" style="width: 150px;">
-              <input type="text" class="form-control float-right" placeholder="Search Id">
-
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
+<div class="text-center mt-2">
+  <h4>{{ h1 }}</h4> 
+<div class="container"> 
+<div role="status" > 
+  <span class="sr-only" id="loading">Loading...</span> 
+</div> 
+</div> 
+<table class=" table justify-content-center" id='tab'> 
+  <thead> 
+  <tr> 
+      <th scope="col">TaskID</th> 
+      <th scope="col">Date </th> 
+      <th scope="col">Estimated Time</th>
+      <th scope="col">EstimatedDuration</th>
+      <th scope="col">Status</th> 
+      <th scope="col">Task</th> 
+      <th scope="col">Team (Running / Monitoring)</th> 
+      <th scope="col">Task Note</th> 
+      <th scope="col">Job Type</th> 
+      <th scope="col">Dependency</th> 
+      <th scope="col">Contact Team</th> 
+      <th scope="col">Business Notification</th> 
+      <th scope="col">Owner</th> 
+  </tr> 
+  </thead> 
+  <tbody class="accordion" id="accordionExample"> 
+  <tr *ngFor="let e of lis;" > 
+      <td>
+          <button class="btn btn-link collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><b>
+              {{ e.TaskID}}
+          </b></button>
+      </td> 
+      <td>{{ e.Date }}</td> 
+      <td> {{ e.EstimatedTime }}</td>
+      <td>{{ e.EstimatedDuration }}</td>
+      <td>
+          <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success pl-2 pr-2" role="progressbar" style="width: 100%; border-radius: 25px 25px 25px 25px;" >{{ e.Status }}</div>
             </div>
-          </div>
-        </div>
+      </td> 
+      <td>{{ e.Task }}</td> 
+      <td>{{ e.ResponsibleTeam }}</td> 
+      <td>{{ e.TaskNote }}</td> 
+      <td>{{ e.JobType }}</td> 
+      <td>{{ e.Dependency }}</td> 
+      <td>{{ e.ContactTeam }}</td> 
+      <td>{{ e.BusinessNotification }}</td>
+      <td>{{ e.Owner }}</td>
+  </tr>
+  </tbody> 
+</table>      
+</div>
 
-        <div class="card-body table-responsive p-0" style="height: 300px;">
-          <table class="table table-bordered table-head-fixed text-nowrap">
-            <thead class="table table-bordered">
-              <tr>
-                <th>#ID</th>
-                <th>Date & 
-                    <br>Estimated Time</th>
-                <th>Estimated 
-                    <br>Duration (hrs)</th>
-                <th>Status</th>
-                <th>Task</th>
-                <th>Responsible For 
-                    <br>Running / Monitoring</th>
-                <th>Job Automated / Manual</th>
-                <th>Dependency</th>
-                <th>Task Notes</th>
-                <th>If failure occurs-contact</th>
-                <th>Business notification</th>
-                <th>Owner</th>
-              </tr>
-            </thead>
-            <tbody >
-                <tr>
-                    <td>1.1</td>
-                    <td>26-06-2020 <br> 12:30 AM   </td>
-                    <td> 1.0 </td>
-                    <td>Completed 
-                        <br> <span class="badge bg-success">100%</span>
-                    </td>
-                    <td>Clear all DSM errors (i.e locks) or obtain approval <br> from Billy or Chase to proceed with errors or <br> delay/resolve</td>
-                    <td>Tech-App-Advertising</td>
-                    <td>Manual</td>
-                    <td> Run DSM Sales Order import</td>
-                    <td>job DigitalSalesOrderImportProcess <br> Hangfire job that runs Daily</td>
-                    <td>Adit (Tech-App-Advertising)</td>
-                    <td> </td>
-                    <td>Tech-App-Advertising</td>
-                    <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-info btn-sm" href="#">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Edit
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-danger btn-sm" href="#">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1.2</td>
-                    <td>26-06-2020 <br> 12:30 AM   </td>
-                    <td>1.0 </td>
-                    <td>Completed 
-                        <br> <span class="badge bg-success">100%</span>
-                    </td>
-                    <td>Run DSM Sales Order Import</td>
-                    <td>Tech-App-Advertising</td>
-                    <td>Automated</td>
-                    <td> </td>
-                    <td>job DigitalSalesOrderImportProcess <br> Hangfire job that runs Daily</td>
-                    <td>Adit (Tech-App-Advertising)</td>
-                    <td>Billy/Chase</td>
-                    <td>Tech-App-Advertising</td>
-                    <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-info btn-sm" href="#">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Edit
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-danger btn-sm" href="#">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1.3</td>
-                    <td>26-09-2020 <br> 12:30 AM   </td>
-                    <td>1.0 </td>
-                    <td>Progress 
-                        <br> <span class="badge bg-primary">40%</span>
-                    </td>
-                    <td>Run DSM Firming </td>
-                    <td>Tech-App-Advertising</td>
-                    <td>Automated</td>
-                    <td> </td>
-                    <td>job DigitalSalesOrderImportProcess <br> Hangfire job that runs Daily</td>
-                    <td>Adit (Tech-App-Advertising)</td>
-                    <td>Billy/Chase</td>
-                    <td>Tech-App-Advertising</td>
-                    <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                            <i class="fas fa-folder">
-                            </i>
-                            View
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-info btn-sm" href="#">
-                            <i class="fas fa-pencil-alt">
-                            </i>
-                            Edit
-                        </a>
-                        &nbsp;
-                        <a class="btn btn-danger btn-sm" href="#">
-                            <i class="fas fa-trash">
-                            </i>
-                            Delete
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-          </table>
-        </div>
 
-        <div class="card-footer">
-            <div class="card-tools">
-                <ul class="pagination pagination-sm float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-              </div>
-        </div>
-        
-      </div>
+
  
-    </div>
-  </div>

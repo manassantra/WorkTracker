@@ -17,6 +17,8 @@ import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angul
 import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
 
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -67,7 +69,8 @@ import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-
     MultiSelectAllModule, 
     TreeViewModule, 
     ButtonAllModule, 
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
